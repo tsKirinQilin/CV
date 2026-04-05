@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate visualization using D3.js</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <h1>Climate visualization using D3.js</h1>
+      <p>Interactive climate analysis dashboard</p>
+    </div>
+
+    <div class="header-right">
+      <label for="countrySelect">Country</label>
+      <select id="countrySelect">
+        <option value="all">All Countries</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="hero-card">
+        <div class="hero-top">
+          <div>
+            <h2>World Climate Map</h2>
+            <p id="mapCurrentLabel">January, 2020</p>
+          </div>
+
+          <div class="hero-stats">
+            <div class="mini-stat">
+              <span>Average</span>
+              <strong id="avgTemp">-</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Hottest</span>
+              <strong id="hottestCountry">-</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Coldest</span>
+              <strong id="coldestCountry">-</strong>
+            </div>
+          </div>
+        </div>
+
+        <svg id="worldMap" width="1400" height="760"></svg>
+
+        <div class="timeline-panel">
+          <div class="timeline-row">
+            <label for="yearSlider">Year</label>
+            <input type="range" id="yearSlider" min="1901" max="2020" value="2020" />
+            <span id="selectedYear">2020</span>
+          </div>
+
+          <div class="timeline-row">
+            <label for="monthSlider">Month</label>
+            <input type="range" id="monthSlider" min="1" max="12" value="1" />
+            <span id="selectedMonth">January</span>
+          </div>
+
+          <div class="playback-row">
+            <button id="playBtn">Play</button>
+            <span id="yearLabel">Year: 2020</span>
+            <span id="monthLabel">Month: January</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <section class="viz-card">
+        <h3>Country Monthly Radial View</h3>
+        <p class="viz-subtitle">Monthly temperature profile for selected country</p>
+        <svg id="countryRadialChart" width="500" height="420"></svg>
+      </section>
+
+      <section class="viz-card">
+        <h3>Temperature Ranking</h3>
+        <p class="viz-subtitle">Top 15 hottest countries</p>
+        <svg id="barChart" width="500" height="420"></svg>
+      </section>
+
+      <section class="viz-card">
+        <h3>Global Temperature Anomaly</h3>
+        <p class="viz-subtitle">Animated annual anomaly pattern</p>
+        <svg id="anomalyChart" width="500" height="420"></svg>
+      </section>
+    </section>
+
+    <section class="secondary-panel">
+      <div class="secondary-card">
+        <h3>Temperature Trend</h3>
+        <p class="viz-subtitle">Long-term annual temperature trend</p>
+        <svg id="lineChart" width="1100" height="420"></svg>
+      </div>
+    </section>
+  </main>
+
+  <div id="tooltip" class="tooltip"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

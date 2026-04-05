@@ -1,0 +1,10 @@
+[
+  { "country": "United States of America", "code": "us", "temperature": 15.2 },
+  { "country": "Germany", "code": "de", "temperature": 10.8 },
+  { "country": "Japan", "code": "jp", "temperature": 12.6 },
+  { "country": "Canada", "code": "ca", "temperature": 8.5 },
+  { "country": "Brazil", "code": "br", "temperature": 24.5 },
+  { "country": "India", "code": "in", "temperature": 25.1 },
+  { "country": "Australia", "code": "au", "temperature": 21.8 },
+  { "country": "China", "code": "cn", "temperature": 13.4 }
+]

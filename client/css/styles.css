@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background:
+    linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+    radial-gradient(circle at 1px 1px, #e5e7eb 1px, transparent 1px);
+  background-size: auto, 22px 22px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  padding: 24px 32px 18px;
+}
+
+.header-left h1 {
+  margin: 0 0 6px;
+  font-size: 34px;
+}
+
+.header-left p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.header-right {
+  min-width: 240px;
+}
+
+.header-right label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.header-right select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+}
+
+.app-shell {
+  padding: 0 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero-card,
+.viz-card,
+.secondary-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.hero-card {
+  padding: 24px 28px 26px;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+
+.hero-top h2 {
+  margin: 0 0 6px;
+  font-size: 30px;
+}
+
+#mapCurrentLabel {
+  margin: 0;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.mini-stat {
+  min-width: 150px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(249, 250, 251, 0.95);
+  border: 1px solid #e5e7eb;
+}
+
+.mini-stat span {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.mini-stat strong {
+  font-size: 15px;
+  color: #111827;
+  line-height: 1.4;
+}
+
+#worldMap {
+  width: 100%;
+  height: 760px;
+  display: block;
+}
+
+.timeline-panel {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timeline-row,
+.playback-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px;
+  align-items: center;
+  gap: 14px;
+}
+
+.timeline-row label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.timeline-row input[type="range"] {
+  width: 100%;
+}
+
+.timeline-row span,
+.playback-row span {
+  font-weight: 700;
+  color: #111827;
+}
+
+.playback-row {
+  grid-template-columns: 90px 1fr 1fr;
+}
+
+#playBtn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.viz-card {
+  padding: 22px 20px 18px;
+  min-height: 520px;
+}
+
+.viz-card h3,
+.secondary-card h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.viz-subtitle {
+  margin: 0 0 14px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+#lineChart,
+#barChart,
+#anomalyChart,
+#countryRadialChart {
+  width: 100%;
+  height: 420px;
+  display: block;
+}
+
+.secondary-card {
+  padding: 22px 20px 18px;
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(17, 24, 39, 0.95);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.tooltip-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.tooltip-value {
+  color: #fde68a;
+}
+
+@media (max-width: 1200px) {
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-top {
+    flex-direction: column;
+  }
+
+  .hero-stats {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app-shell {
+    padding: 0 18px 24px;
+  }
+
+  .header {
+    padding: 20px 18px 14px;
+  }
+
+  #worldMap {
+    height: 520px;
+  }
+
+  .timeline-row,
+  .playback-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  #lineChart,
+  #barChart,
+  #anomalyChart,
+  #countryRadialChart {
+    height: 360px;
+  }
+}
