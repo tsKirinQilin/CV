@@ -9,14 +9,11 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// API routes
 app.use("/api", climateRoutes);
 
-// Static frontend
 const clientPath = path.join(__dirname, "..", "client");
 app.use(express.static(clientPath));
 
-// Fallback for frontend routes
 app.get("*", (req, res) => {
   res.sendFile(path.join(clientPath, "index.html"));
 });

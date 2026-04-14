@@ -19,6 +19,17 @@
       <select id="countrySelect">
         <option value="all">All Countries</option>
       </select>
+
+      <div class="compare-box">
+        <label class="compare-toggle">
+          <input type="checkbox" id="compareToggle" />
+          Compare Mode
+        </label>
+
+        <select id="compareCountrySelect" disabled>
+          <option value="">Select country</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -71,16 +82,62 @@
       </div>
     </section>
 
+    <section class="insights-panel">
+      <div class="insight-card">
+        <span class="insight-label">Global Trend</span>
+        <strong id="globalTrend">-</strong>
+        <p id="globalTrendDesc">-</p>
+      </div>
+
+      <div class="insight-card">
+        <span class="insight-label">Fastest Warming</span>
+        <strong id="fastestWarming">-</strong>
+        <p id="fastestWarmingDesc">-</p>
+      </div>
+
+      <div class="insight-card">
+        <span class="insight-label">Fastest Cooling</span>
+        <strong id="fastestCooling">-</strong>
+        <p id="fastestCoolingDesc">-</p>
+      </div>
+
+      <div class="insight-card">
+        <span class="insight-label">Average Decade Change</span>
+        <strong id="decadeChange">-</strong>
+        <p id="decadeChangeDesc">-</p>
+      </div>
+    </section>
+
+    <section id="compareSummaryPanel" class="compare-summary-panel hidden">
+  <div class="compare-summary-card">
+    <span class="compare-summary-label">Current Month</span>
+    <strong id="compareCurrentMonth">-</strong>
+    <p id="compareCurrentMonthDesc">-</p>
+  </div>
+
+  <div class="compare-summary-card">
+    <span class="compare-summary-label">Year Average</span>
+    <strong id="compareYearAverage">-</strong>
+    <p id="compareYearAverageDesc">-</p>
+  </div>
+
+  <div class="compare-summary-card">
+    <span class="compare-summary-label">Long-Term Change</span>
+    <strong id="compareTrendChange">-</strong>
+    <p id="compareTrendChangeDesc">-</p>
+  </div>
+</section>
+
     <section class="bottom-grid">
       <section class="viz-card">
         <h3>Country Monthly Radial View</h3>
-        <p class="viz-subtitle">Monthly temperature profile for selected country</p>
+        <p class="viz-subtitle">Monthly temperature profile</p>
         <svg id="countryRadialChart" width="500" height="420"></svg>
       </section>
 
       <section class="viz-card">
         <h3>Temperature Ranking</h3>
-        <p class="viz-subtitle">Top 15 hottest countries</p>
+        <p class="viz-subtitle">Current month comparison</p>
         <svg id="barChart" width="500" height="420"></svg>
       </section>
 
